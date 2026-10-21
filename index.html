@@ -16,10 +16,9 @@
                 <ul class="site-nav__list">
                     <li class="site-nav__item"><a class="site-nav__link site-nav__link--active" href="index.html">Главная</a></li>
                     <li class="site-nav__item"><a class="site-nav__link" href="catalog.html">Каталог</a></li>
+                    <li class="site-nav__item"><a class="site-nav__link" href="product.html">Товар</a></li>
+                    <li class="site-nav__item"><a class="site-nav__link" href="order.html">Заявка</a></li>
                     <li class="site-nav__item"><a class="site-nav__link" href="contacts.html">Контакты</a></li>
-                    <li class="site-nav__item"><a class="site-nav__link" href="index.html#advantages">Преимущества</a></li>
-                    <li class="site-nav__item"><a class="site-nav__link" href="index.html#popular">Популярные товары</a></li>
-                    <li class="site-nav__item"><a class="site-nav__link" href="index.html#contacts">Обратная связь</a></li>
                 </ul>
             </nav>
         </div>
@@ -47,20 +46,23 @@
             
             <div class="products-grid">
                 <article class="product-card">
+                    <span class="product-card__badge product-card__badge--new">Новинка</span>
                     <h3 class="product-card__title">Товар 1</h3>
                     <p class="product-card__description">Краткое описание учебного товара.</p>
                     <p class="product-card__price">Цена: 1000 руб.</p>
                     <button class="button button--primary product-card__button" type="button" data-product="Товар 1">Заказать</button>
                 </article>
 
-                <article class="product-card product-card--featured">
+                <article class="product-card product-card--discount">
+                    <span class="product-card__badge product-card__badge--sale">Скидка</span>
                     <h3 class="product-card__title">Товар 2</h3>
                     <p class="product-card__description">Краткое описание учебного товара.</p>
                     <p class="product-card__price">Цена: 1500 руб.</p>
                     <button class="button button--primary product-card__button" type="button" data-product="Товар 2">Заказать</button>
                 </article>
 
-                <article class="product-card product-card--discount">
+                <article class="product-card product-card--featured">
+                    <span class="product-card__badge product-card__badge--hit">Хит</span>
                     <h3 class="product-card__title">Товар 3</h3>
                     <p class="product-card__description">Краткое описание учебного товара.</p>
                     <p class="product-card__price">Цена: 2000 руб.</p>
@@ -128,5 +130,23 @@
     </dialog>
 
     <p class="success-message" id="success-message" hidden>Форма успешно отправлена!</p>
+
+    <button class="scroll-top-button" id="scroll-top-button" aria-label="Наверх">↑</button>
+
+    <script>
+        const scrollTopBtn = document.getElementById('scroll-top-button');
+        if (scrollTopBtn) {
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 300) {
+                    scrollTopBtn.classList.add('scroll-top-button--visible');
+                } else {
+                    scrollTopBtn.classList.remove('scroll-top-button--visible');
+                }
+            });
+            scrollTopBtn.addEventListener('click', function() {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        }
+    </script>
 </body>
 </html>
