@@ -1,106 +1,130 @@
 <!DOCTYPE html>
 <html lang="ru">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Оформление заявки в учебном интернет-магазине.">
     <title>Оформление заявки — Учебный интернет-магазин</title>
-    <meta name="description" content="Форма оформления заявки на покупку товара в учебном интернет-магазине">
     <link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
     <header class="site-header">
         <div class="site-header__inner">
             <a class="site-header__logo" href="index.html">ShopProject</a>
             <nav class="site-nav" aria-label="Основная навигация">
                 <ul class="site-nav__list">
-                    <li class="site-nav__item"><a href="index.html" class="site-nav__link">Главная</a></li>
-                    <li class="site-nav__item"><a href="catalog.html" class="site-nav__link">Каталог</a></li>
-                    <li class="site-nav__item"><a href="order.html"
-                            class="site-nav__link site-nav__link--active">Заявка</a></li>
-                    <li class="site-nav__item"><a href="contacts.html" class="site-nav__link">Контакты</a></li>
-                    <li class="site-nav__item"><a href="index.html#advantages" class="site-nav__link">Преимущества</a>
-                    </li>
-                    <li class="site-nav__item"><a href="index.html#popular" class="site-nav__link">Популярные</a></li>
+                    <li class="site-nav__item"><a class="site-nav__link" href="index.html">Главная</a></li>
+                    <li class="site-nav__item"><a class="site-nav__link" href="catalog.html">Каталог</a></li>
+                    <li class="site-nav__item"><a class="site-nav__link" href="product.html">Товар</a></li>
+                    <li class="site-nav__item"><a class="site-nav__link site-nav__link--active" href="order.html">Заявка</a></li>
+                    <li class="site-nav__item"><a class="site-nav__link" href="contacts.html">Контакты</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <main class="order-main">
-        <h1>Оформление заявки</h1>
-        <p class="order-intro">Заполните форму ниже, и наш менеджер свяжется с вами в ближайшее время для подтверждения
-            заказа.</p>
+    <main>
+        <nav class="breadcrumbs" aria-label="Хлебные крошки">
+            <a class="breadcrumbs__link" href="index.html">Главная</a>
+            <span class="breadcrumbs__current">Оформление заявки</span>
+        </nav>
 
-        <form class="order-form order-form--page" id="order-form-page" action="#" method="post" novalidate>
-            <div class="form-field">
-                <label for="page-name">Имя *</label>
-                <input id="page-name" name="name" type="text" placeholder="Введите ваше имя" minlength="2"
-                    autocomplete="given-name" required>
-            </div>
+        <section class="order-page">
+            <h1>Оформление заявки</h1>
+            <p>Заполните форму ниже, и мы свяжемся с вами в ближайшее время.</p>
 
-            <div class="form-field">
-                <label for="page-email">E-mail *</label>
-                <input id="page-email" name="email" type="email" placeholder="example@mail.ru" autocomplete="email"
-                    required>
-            </div>
+            <form class="order-form order-form--standalone" id="order-form-standalone" action="#" method="post" novalidate>
+                <div class="order-form__field">
+                    <label class="order-form__label" for="order-name-standalone">Имя *</label>
+                    <input class="order-form__input" id="order-name-standalone" name="name" type="text" placeholder="Введите ваше имя" minlength="2" autocomplete="given-name" required>
+                </div>
 
-            <div class="form-field">
-                <label for="page-phone">Телефон *</label>
-                <input id="page-phone" name="phone" type="tel" inputmode="tel" placeholder="+7(900) 000-00-00"
-                    pattern="^\+7\(\d{3}\)\d{3}-\d{2}-\d{2}$" required>
-                <small>Формат: +7(900) 000-00-00</small>
-            </div>
+                <div class="order-form__field">
+                    <label class="order-form__label" for="order-email-standalone">E-mail *</label>
+                    <input class="order-form__input" id="order-email-standalone" name="email" type="email" placeholder="example@mail.ru" autocomplete="email" required>
+                </div>
 
-            <div class="form-field">
-                <label for="page-product">Выбранный товар</label>
-                <select id="page-product" name="product">
-                    <option value="">Выберите товар</option>
-                    <option value="Товар 1">Товар 1 — 1000 руб.</option>
-                    <option value="Товар 2">Товар 2 — 1500 руб.</option>
-                    <option value="Товар 3">Товар 3 — 2000 руб.</option>
-                    <option value="Товар 4">Товар 4 — 1200 руб.</option>
-                    <option value="Товар 5">Товар 5 — 1800 руб.</option>
-                    <option value="Товар 6">Товар 6 — 900 руб.</option>
-                </select>
-            </div>
+                <div class="order-form__field">
+                    <label class="order-form__label" for="order-phone-standalone">Телефон *</label>
+                    <input class="order-form__input" id="order-phone-standalone" name="phone" type="tel" inputmode="tel" placeholder="+7(900) 000-00-00" pattern="^\+7\(\d{3}\)\d{3}-\d{2}-\d{2}$" autocomplete="tel" required>
+                    <small>Формат: +7(900) 000-00-00</small>
+                </div>
 
-            <div class="form-field">
-                <label for="page-date">Желаемая дата связи</label>
-                <input id="page-date" name="date" type="date">
-            </div>
+                <div class="order-form__field">
+                    <label class="order-form__label" for="order-product-standalone">Товар *</label>
+                    <select class="order-form__select" id="order-product-standalone" name="product" required>
+                        <option value="">Выберите товар</option>
+                        <option value="product1">Товар 1 — 1000 руб.</option>
+                        <option value="product2">Товар 2 — 1500 руб.</option>
+                        <option value="product3">Товар 3 — 2000 руб.</option>
+                        <option value="product4">Товар 4 — 1200 руб.</option>
+                        <option value="product5">Товар 5 — 1800 руб.</option>
+                        <option value="product6">Товар 6 — 900 руб.</option>
+                    </select>
+                </div>
 
-            <div class="form-field">
-                <label for="page-comment">Комментарий</label>
-                <textarea id="page-comment" name="comment" rows="4"
-                    placeholder="Укажите дополнительную информацию о заказе"></textarea>
-            </div>
+                <div class="order-form__field">
+                    <label class="order-form__label" for="order-date-standalone">Желаемая дата связи</label>
+                    <input class="order-form__input" id="order-date-standalone" name="date" type="date">
+                </div>
 
-            <div class="form-field form-field--checkbox">
-                <label>
-                    <input id="page-agreement" name="agreement" type="checkbox" required>
-                    Я согласен на обработку персональных данных *
-                </label>
-            </div>
+                <div class="order-form__field">
+                    <label class="order-form__label" for="order-comment-standalone">Комментарий</label>
+                    <textarea class="order-form__textarea" id="order-comment-standalone" name="comment" rows="5" placeholder="Укажите дополнительную информацию: адрес доставки, пожелания, вопросы"></textarea>
+                </div>
 
-            <div class="form-actions">
-                <button type="submit" class="button">Отправить заявку</button>
-                <button type="reset" class="button button--secondary">Очистить форму</button>
-            </div>
-        </form>
+                <div class="order-form__field order-form__field--checkbox">
+                    <label class="order-form__label">
+                        <input class="order-form__input" id="order-agreement-standalone" name="agreement" type="checkbox" required>
+                        Я согласен на обработку персональных данных *
+                    </label>
+                </div>
 
-        <p class="success-message success-message--page" id="success-message-page" hidden>
-            Ваша заявка успешно отправлена! Мы свяжемся с вами в ближайшее время.
-        </p>
+                <div class="order-form__actions">
+                    <button class="button button--secondary" type="reset">Очистить форму</button>
+                    <button class="button button--primary" type="submit">Отправить заявку</button>
+                </div>
+            </form>
+
+            <p class="success-message" id="success-message-standalone" hidden>Спасибо! Ваша заявка успешно отправлена. Мы свяжемся с вами в ближайшее время.</p>
+        </section>
     </main>
 
-    <footer class="site-footer" id="contacts">
+    <footer class="site-footer">
         <p>&copy; 2026 Учебный проект. Все права защищены.</p>
         <p>Дисциплина: Фронтенд и бэкенд разработка</p>
     </footer>
 
-    <script src="js/main.js" defer></script>
-</body>
+    <button class="scroll-top-button" id="scroll-top-button" aria-label="Наверх">↑</button>
 
+    <script>
+        const form = document.getElementById('order-form-standalone');
+        const successMessage = document.getElementById('success-message-standalone');
+        if (form) {
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                if (form.checkValidity()) {
+                    form.hidden = true;
+                    successMessage.hidden = false;
+                } else {
+                    form.reportValidity();
+                }
+            });
+        }
+
+        const scrollTopBtn = document.getElementById('scroll-top-button');
+        if (scrollTopBtn) {
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 300) {
+                    scrollTopBtn.classList.add('scroll-top-button--visible');
+                } else {
+                    scrollTopBtn.classList.remove('scroll-top-button--visible');
+                }
+            });
+            scrollTopBtn.addEventListener('click', function() {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        }
+    </script>
+</body>
 </html>
