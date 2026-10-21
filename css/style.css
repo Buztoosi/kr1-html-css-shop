@@ -204,3 +204,8 @@ main { max-width: var(--container-width); margin: 0 auto; padding: var(--space-x
 .faq-item summary:hover { color: var(--color-primary); }
 .faq-item p { margin-top: var(--space-md); margin-bottom: 0; color: var(--color-text-muted); line-height: 1.6; }
 .faq-item[open] { background-color: var(--color-surface); }
+
+/* ===== Изображение на странице товара ===== */
+.product-layout__image { position: relative; background-color: var(--color-bg-soft); border-radius: var(--radius-md); overflow: hidden; min-height: 400px; display: flex; align-items: center; justify-content: center; }
+.product-layout__image img { width: 100%; height: 100%; object-fit: cover; }
+.product-layout__image .product-card__badge { top: var(--space-md); right: var(--space-md); }
